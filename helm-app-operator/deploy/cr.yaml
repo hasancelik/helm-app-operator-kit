@@ -1,8 +1,8 @@
-apiVersion: example.com/v1alpha1
-kind: ExampleApp
+apiVersion: hazelcast.com/v1
+kind: Hazelcast
 metadata:
-  name: my-example-app
+  name: my-hazelcast
   labels:
-    app: example-app
+    app: hazelcast
 spec:
-  size: 2
+  replicaCount: 2

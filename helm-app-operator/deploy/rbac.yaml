@@ -1,10 +1,10 @@
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: helm-app-operator
+  name: hazelcast-operator
 rules:
 - apiGroups:
-  - app.coreos.com
+  - hazelcast.com
   resources:
   - "*"
   verbs:
@@ -36,11 +36,11 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
-  name: default-account-helm-app-operator
+  name: default-account-hazelcast-operator
 subjects:
 - kind: ServiceAccount
   name: default
 roleRef:
   kind: Role
-  name: helm-app-operator
+  name: hazelcast-operator
   apiGroup: rbac.authorization.k8s.io
