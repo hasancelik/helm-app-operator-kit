@@ -1,8 +1,18 @@
 apiVersion: hazelcast.com/v1
 kind: Hazelcast
 metadata:
-  name: my-hazelcast
+  name: my-hz
   labels:
     app: hazelcast
 spec:
-  replicaCount: 2
+  replicaCount: 1
+  image:
+   repository: "registry.connect.redhat.com/hazelcast/hazelcast-3-rhel7"
+   tag: "3.11"
+  hazelcast:
+    licenseKey: "LICENSE_KEY"
+  mancenter:
+    image:
+      repository: "registry.connect.redhat.com/hazelcast/management-center-3-rhel7"
+      tag: "3.11"
+    licenseKey: "LICENSE_KEY"
